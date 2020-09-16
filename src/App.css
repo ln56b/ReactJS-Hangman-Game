@@ -1,0 +1,59 @@
+.main-container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.header {
+  text-align: center;
+}
+
+.wrong-guesses {
+  text-align: right;
+}
+
+.figure > img {
+  display: block;
+  margin: 0 auto;
+}
+
+.keyboard {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50vw;
+}
+
+.keyboard > button {
+  margin: 1rem;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+}
+
+.word > h4 {
+  margin: 1rem;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 10rem;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 10rem;
+  margin: 0 auto;
+}
