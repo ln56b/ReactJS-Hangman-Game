@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
+import Figure from './Figure'
 import Header from './Header'
-import Notification from './Notification'
+import Keyboard from './Keyboard'
 import Popup from './Popup'
 import Word from './Word'
-import WrongLetters from './WrongLetters'
+import WrongGuesses from './WrongGuesses'
 
 const Game = () => {
+
+  const [hiddenWord, setHiddenWord] = useState('Hello');
+
+  const isWinner = false;
+  const isFinished = false;
+
   return (
     <>
       <Header />
-      <div>
-        <WrongLetters />
-        <Word />
-      </div>
-      <Popup />
-      <Notification />
+      <Figure />
+      <WrongGuesses />
+      <Word hiddenWord={hiddenWord} />
+      <Keyboard />
+      <Popup isWinner={isWinner} isFinished={isFinished} />
     </>
   );
 }
