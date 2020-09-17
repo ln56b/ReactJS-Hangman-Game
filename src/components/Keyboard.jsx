@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const alphabet = "ABCDEFGHIJKLMNOPKRSTUVWXYZ".split('');
+const ALPHABET = "ABCDEFGHIJKLMNOPKRSTUVWXYZ".split('');
 
 
 const Keyboard = ({ handleGuess, hiddenWord }) => {
@@ -12,7 +12,7 @@ const Keyboard = ({ handleGuess, hiddenWord }) => {
 
   return (
     <div className="keyboard">
-      {alphabet.map((letter, index) => hiddenWord.length ?
+      {ALPHABET.map((letter, index) => hiddenWord.length ?
         <button key={index} onClick={handleClick} value={letter}>{letter}</button> : null
       )}
     </div>
@@ -20,7 +20,8 @@ const Keyboard = ({ handleGuess, hiddenWord }) => {
 }
 
 Keyboard.propTypes = {
-  handleGuess: PropTypes.func.isRequired
+  handleGuess: PropTypes.func.isRequired,
+  hiddenWord: PropTypes.string.isRequired,
 }
 
 export default Keyboard;
