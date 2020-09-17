@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 
-const WrongGuesses = ({ errorCount, maxErrors }) => (
+const MAX_ERRORS = 10;
+
+const WrongGuesses = ({ errorCount }) => (
 
   <div className="wrong-guesses">
     <h4>Wrong guesses</h4>
-    <h3>{errorCount} / {maxErrors} </h3>
+    <h3>{errorCount} / {MAX_ERRORS} </h3>
   </div>
 )
 
