@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import step0 from '../assets/step0.jpg';
 import step1 from '../assets/step1.jpg';
@@ -22,6 +23,10 @@ const Figure = ({ errorCount }) => {
       <img src={correctFigure} alt="hangman" />
     </div>
   );
+}
+
+Figure.propTypes = {
+  errorCount: PropTypes.number.isRequired
 }
 
 export default Figure;
