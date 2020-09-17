@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const Word = ({ generateRandomWord, hiddenWord, guessedLetters }) => (
+const Word = ({ generateRandomWord, hiddenWord, guessedLetters, isPlayable }) => (
   <div className="word" >
-    <button onClick={generateRandomWord}>Generate word</button>
+    {
+      isPlayable ?
+        <button onClick={generateRandomWord}>Generate word</button>
+        : null
+    }
     <div className="word-display">
       {hiddenWord.split('').map((letter, index) =>
         <h4 key={index}>
