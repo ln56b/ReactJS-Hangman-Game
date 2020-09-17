@@ -1,11 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
-const Word = ({ hiddenWord }) => (
-  <div className="word">
-    {hiddenWord.split('').map(letter =>
-      <h4>{letter}</h4>
-    )}
-  </div>
+const Word = ({ generateRandomWord, hiddenWord, guessedLetters }) => (
+  <div className="word" >
+    <button onClick={generateRandomWord}>Generate word</button>
+    <div className="word-display">
+      {hiddenWord.split('').map((letter, index) =>
+        <h4 key={index}>
+          {guessedLetters.has(letter) ? letter : '_'}
+        </h4>
+      )}
+    </div>
+  </div >
 )
+
+Word.propTypes = {
+  generateRandomWord: PropTypes.func.isRequired,
+  hiddenWord: PropTypes.string.isRequired,
+  guessedLetters: PropTypes.object.isRequired
+}
 
 export default Word;
