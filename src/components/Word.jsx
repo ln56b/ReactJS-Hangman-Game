@@ -7,7 +7,7 @@ const Word = ({ generateRandomWord, hiddenWord, guessedLetters }) => (
     <div className="word-display">
       {hiddenWord.split('').map((letter, index) =>
         <h4 key={index}>
-          {guessedLetters.has(letter) ? letter : '_'}
+          {guessedLetters.includes(letter) ? letter : '_'}
         </h4>
       )}
     </div>
@@ -17,7 +17,7 @@ const Word = ({ generateRandomWord, hiddenWord, guessedLetters }) => (
 Word.propTypes = {
   generateRandomWord: PropTypes.func.isRequired,
   hiddenWord: PropTypes.string.isRequired,
-  guessedLetters: PropTypes.object.isRequired
+  guessedLetters: PropTypes.array.isRequired
 }
 
 export default Word;
