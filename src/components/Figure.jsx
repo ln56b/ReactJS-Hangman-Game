@@ -12,12 +12,13 @@ import step7 from '../assets/step7.jpg';
 import step8 from '../assets/step8.jpg';
 import step9 from '../assets/step9.jpg';
 import step10 from '../assets/step10.jpg';
+import fireworks from '../assets/fireworks.jpg';
 
 
-const Figure = ({ errorCount }) => {
+const Figure = ({ errorCount, isWinner }) => {
 
   const imageForErrorCount = [step0, step1, step2, step3, step4, step5, step6, step7, step8, step9, step10];
-  let correctFigure = imageForErrorCount.find((_, index) => index === errorCount)
+  let correctFigure = isWinner ? fireworks : imageForErrorCount.find((_, index) => index === errorCount)
   return (
     <div className="figure">
       <img src={correctFigure} alt="hangman" />
