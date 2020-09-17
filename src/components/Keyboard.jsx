@@ -15,7 +15,6 @@ const Keyboard = ({ handleGuess }) => {
       {alphabet.map((letter, index) =>
         <button key={index} onClick={handleClick} value={letter}>{letter}</button>
       )}
-
     </div>
   )
 }
