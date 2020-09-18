@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Figure from './Figure';
 import Header from './Header';
 import Keyboard from './Keyboard';
-import Popup from './Popup';
 import ResetGame from './ResetGame';
 import Word from './Word';
 import WrongGuesses from './WrongGuesses';
@@ -19,7 +18,6 @@ const Game = () => {
   const [errorCount, setErrorCount] = useState(0);
   const [isWinner, setIsWinner] = useState(false);
   const [isLoser, setIsLoser] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
   const [isPlayable, setIsPlayable] = useState(true);
 
 
@@ -30,13 +28,11 @@ const Game = () => {
   function checkGameScore() {
     if (hiddenWord !== '') {
       if (hiddenWord.length === guessedLetters.length) {
-        setIsFinished(true)
         setIsPlayable(false)
         setIsWinner(true)
       }
       else if (errorCount === MAX_ERRORS) {
         setIsLoser(true)
-        setIsFinished(true)
         setIsPlayable(false)
       }
     }
@@ -65,19 +61,17 @@ const Game = () => {
     setErrorCount(0)
     setIsWinner(false)
     setIsLoser(false)
-    setIsFinished(false)
     setIsPlayable(true)
   }
 
   return (
     <React.Fragment>
       <Header isWinner={isWinner} isLoser={isLoser} guessedLetters={guessedLetters} hiddenWord={hiddenWord} />
+      <ResetGame isPlayable={isPlayable} resetGame={resetGame} />
       <Figure errorCount={errorCount} isWinner={isWinner} />
       <Keyboard handleGuess={handleGuess} hiddenWord={hiddenWord} guessedLetters={guessedLetters} wrongLetters={wrongLetters} />
       <WrongGuesses errorCount={errorCount} />
       <Word generateRandomWord={generateRandomWord} hiddenWord={hiddenWord} guessedLetters={guessedLetters} />
-      <Popup isWinner={isWinner} isFinished={isFinished} />
-      <ResetGame isPlayable={isPlayable} resetGame={resetGame} />
     </React.Fragment >
   );
 }
