@@ -36,6 +36,11 @@
   width: 2rem;
 }
 
+.keyboard > button[disabled] {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
 .word {
   display: flex;
   flex-direction: column;

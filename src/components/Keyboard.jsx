@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ALPHABET = "ABCDEFGHIJKLMNOPKRSTUVWXYZ".split('');
 
 
-const Keyboard = ({ handleGuess, hiddenWord }) => {
+const Keyboard = ({ handleGuess, hiddenWord, guessedLetters, wrongLetters }) => {
 
   function handleClick(e) {
     handleGuess(e.target.value)
@@ -13,7 +13,7 @@ const Keyboard = ({ handleGuess, hiddenWord }) => {
   return (
     <div className="keyboard">
       {ALPHABET.map((letter, index) => hiddenWord.length ?
-        <button key={index} onClick={handleClick} value={letter}>{letter}</button> : null
+        <button key={index} onClick={handleClick} value={letter} disabled={guessedLetters.includes(letter) || wrongLetters.includes(letter) ? true : false}>{letter}</button> : null
       )}
     </div>
   )
