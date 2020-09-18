@@ -14,6 +14,9 @@ Hangman game - React hooks
 
 - Enable user to restart a party with a simple click on button
 
+**Live Project**
+
+[Link to Netlify URL](https://ln56b.github.io/ReactJS-Hangman-Game/)
 
 **Technologies**
 
