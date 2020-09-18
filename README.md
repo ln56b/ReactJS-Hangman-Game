@@ -16,7 +16,7 @@ Hangman game - React hooks
 
 **Live Project**
 
-[Link to Netlify URL](https://ln56b.github.io/ReactJS-Hangman-Game/)
+[Link to live game](https://ln56b.github.io/ReactJS-Hangman-Game/)
 
 **Technologies**
 
