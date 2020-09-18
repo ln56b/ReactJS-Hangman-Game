@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const Word = ({ generateRandomWord, hiddenWord, guessedLetters, isPlayable }) => (
+const Word = ({ generateRandomWord, hiddenWord, guessedLetters }) => (
   <div className="word" >
     {
-      isPlayable ?
+      !hiddenWord.length ?
         <button onClick={generateRandomWord}>Generate word</button>
         : null
     }
