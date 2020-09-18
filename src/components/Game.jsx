@@ -10,7 +10,7 @@ const MAX_ERRORS = 10;
 const WORDS = ['almond', 'apricot', 'cashew', 'date', 'fig', 'fruit', 'grape', 'hazelnut', 'leaf', 'lemon', 'melon', 'olive', 'peach'];
 
 
-const Game = () => {
+function Game() {
 
   const [hiddenWord, setHiddenWord] = useState('');
   const [guessedLetters, setGuessedLetters] = useState([]);

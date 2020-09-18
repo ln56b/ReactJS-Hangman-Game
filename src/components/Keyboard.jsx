@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ALPHABET = "ABCDEFGHIJKLMNOPKRSTUVWXYZ".split('');
+const ALPHABET = "ABCDEFGHIJKLMNOPRSTUVWXYZ".split('');
 
 
-const Keyboard = ({ handleGuess, guessedLetters, wrongLetters, isPlayable }) => {
+function Keyboard({ handleGuess, guessedLetters, wrongLetters, isPlayable }) {
 
   function handleClick(e) {
     handleGuess(e.target.value)

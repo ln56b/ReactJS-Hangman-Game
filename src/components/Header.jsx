@@ -7,7 +7,7 @@ const START_TEXT = 'Guess the word...or DIE';
 const GAME_TEXT = 'Pay attention, this is a dangerous World';
 
 
-const Header = ({ isWinner, isLoser, guessedLetters, hiddenWord }) => {
+function Header({ isWinner, isLoser, guessedLetters, hiddenWord }) {
 
   const correctSentence =
     (isWinner)

@@ -16,12 +16,11 @@ import fireworks from '../assets/fireworks.jpg';
 import crows from '../assets/crows.jpg';
 
 const MAX_ERRORS = 10;
+const IMAGES = [step0, step1, step2, step3, step4, step5, step6, step7, step8, step9, step10];
 
-const Figure = ({ errorCount, isWinner }) => {
+function Figure({ errorCount, isWinner }) {
 
-  const imageForErrorCount = [step0, step1, step2, step3, step4, step5, step6, step7, step8, step9, step10];
-
-  const correctFigure = (errorCount === MAX_ERRORS) ? crows : (isWinner) ? fireworks : imageForErrorCount.find((_, index) => index === errorCount);
+  const correctFigure = (errorCount === MAX_ERRORS) ? crows : (isWinner) ? fireworks : IMAGES.find((_, index) => index === errorCount);
 
   return (
     <div className="figure">
