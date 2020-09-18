@@ -18,6 +18,7 @@ const Game = () => {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [errorCount, setErrorCount] = useState(0);
   const [isWinner, setIsWinner] = useState(false);
+  const [isLoser, setIsLoser] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const [isPlayable, setIsPlayable] = useState(true);
 
@@ -34,6 +35,7 @@ const Game = () => {
         setIsWinner(true)
       }
       else if (errorCount === MAX_ERRORS) {
+        setIsLoser(true)
         setIsFinished(true)
         setIsPlayable(false)
       }
@@ -59,15 +61,17 @@ const Game = () => {
   function resetGame() {
     setHiddenWord('')
     setGuessedLetters([])
+    setWrongLetters([])
     setErrorCount(0)
     setIsWinner(false)
+    setIsLoser(false)
     setIsFinished(false)
     setIsPlayable(true)
   }
 
   return (
     <React.Fragment>
-      <Header />
+      <Header isWinner={isWinner} isLoser={isLoser} guessedLetters={guessedLetters} hiddenWord={hiddenWord} />
       <Figure errorCount={errorCount} isWinner={isWinner} />
       <Keyboard handleGuess={handleGuess} hiddenWord={hiddenWord} guessedLetters={guessedLetters} wrongLetters={wrongLetters} />
       <WrongGuesses errorCount={errorCount} />
