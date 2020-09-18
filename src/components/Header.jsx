@@ -1,18 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+const WINNER_TEXT = 'Well done old pal, you won !';
+const LOSER_TEXT = 'You lost. The hidden word was ';
+const START_TEXT = 'Guess the word...or DIE';
+const GAME_TEXT = 'Pay attention, this is a dangerous World';
 
 
 const Header = ({ isWinner, isLoser, guessedLetters, hiddenWord }) => {
 
   const correctSentence =
     (isWinner)
-      ? 'Well done old pal, you won !'
+      ? WINNER_TEXT
       : (isLoser)
-        ? 'You lost...crows should be your friends now'
+        ? LOSER_TEXT + hiddenWord
         : (guessedLetters.length !== hiddenWord.length)
-          ? 'Pay attention, this is a dangerous World'
+          ? GAME_TEXT
           : (!hiddenWord.length)
-            ? 'Guess the word...or DIE'
-            : 'Toto'
+            ? START_TEXT
+            : ''
 
   return (
     < div className="header" >
@@ -20,6 +26,13 @@ const Header = ({ isWinner, isLoser, guessedLetters, hiddenWord }) => {
       <h2>{correctSentence}</h2>
     </div >
   )
+}
+
+Header.propTypes = {
+  isWinner: PropTypes.bool.isRequired,
+  isLoser: PropTypes.bool.isRequired,
+  guessedLetters: PropTypes.array.isRequired,
+  hiddenWord: PropTypes.string.isRequired,
 }
 
 export default Header;
