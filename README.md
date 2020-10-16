@@ -1,6 +1,6 @@
 **General** 
 
-Hangman game - React hooks
+:cactus: Hangman game - React hooks :cactus:
 
 **Objectives**
 
